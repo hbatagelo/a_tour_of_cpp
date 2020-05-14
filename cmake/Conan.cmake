@@ -13,11 +13,6 @@ macro(run_conan)
   endif()
   include(${CMAKE_BINARY_DIR}/conan.cmake)
 
-  # Add bincrafters remote repository
-  conan_check()
-  conan_add_remote(NAME bincrafters URL
-                   https://api.bintray.com/conan/bincrafters/public-conan)
-
   # Launch conan install
   conan_cmake_run(
     REQUIRES

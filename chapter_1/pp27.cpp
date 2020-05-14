@@ -1,5 +1,4 @@
 #include <array>
-#include <gsl/gsl>
 #include <iostream>
 
 const int n = 10;

@@ -21,3 +21,7 @@ target_link_libraries(pp27 PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})
 # pp28
 add_executable(pp28 pp28.cpp)
 target_link_libraries(pp28 PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})
+
+# pp29
+add_executable(pp29 pp29.cpp)
+target_link_libraries(pp29 PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})
