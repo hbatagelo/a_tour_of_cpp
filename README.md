@@ -1,7 +1,9 @@
-# a_tour_of_cpp
+# Unofficial Companion Code for A Tour of C++
 
 ---------
-An unofficial companion code of the book [A Tour of C++, Second Edition] (http://www.stroustrup.com/tour2.html) by Bjarne Stroustrup. 
+An unofficial and modified version of the companion code of the book [A Tour of C++, Second Edition](http://www.stroustrup.com/tour2.html) by Bjarne Stroustrup. 
+
+Most changes of the code snippets are an attempt to follow the most recent [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) and [Clang-Tidy](https://clang.llvm.org/extra/clang-tidy/) rules.
 
 ## Build Requirements
 

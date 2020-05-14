@@ -1,0 +1,13 @@
+---
+# Configure clang-tidy for this project.
+
+Checks: '*,-abseil*,-google*,-zircon*,-android*,-fuchsia*,-modernize-use-trailing-return-type,-llvm*,-*magic-numbers*'
+
+WarningsAsErrors: '*'
+
+HeaderFilterRegex: '.*'
+
+AnalyzeTemporaryDtors: false
+
+FormatStyle: llvm
+...

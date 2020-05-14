@@ -11,9 +11,7 @@
 
 # Build directories
 build
-vs2017
-vs2019
 
-# CMake build configuration used by Visual Studio
+# CMake build configuration used by clangd and VS
 CMakeSettings.json
 compile_commands.json

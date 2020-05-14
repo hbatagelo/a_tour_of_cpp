@@ -1,0 +1,46 @@
+# Default additional_commands
+additional_commands:
+  foo:
+    flags:
+    - BAR
+    - BAZ
+    kwargs:
+      DEPENDS: '*'
+      HEADERS: '*'
+      SOURCES: '*'
+
+# If comment markup is enabled, don't reflow the first comment block in each
+# listfile. Use this to preserve formatting of your copyright/license
+# statements.
+first_comment_is_literal: True
+
+# What character to use for bulleted lists
+bullet_char: '*'
+
+# What character to use as punctuation after numerals in an enumerated list
+enum_char: .
+
+# If a statement is wrapped to more than one line, than dangle the closing
+# parenthesis on its own line.
+dangle_parens: false
+
+# What style line endings to use in the output.
+line_ending: unix
+
+# How wide to allow formatted cmake files
+line_width: 80
+
+# Regular expression pattern describing valid macro names
+macro_pattern: '[0-9a-z_]+'
+
+# Require no more than this many newlines between statements
+max_statement_spacing: 2
+
+# If true, separate flow control names from their parentheses with a space
+separate_ctrl_name_with_space: false
+
+# If true, separate function names from parentheses with a space
+separate_fn_name_with_space: false
+
+# How many spaces to tab for indent
+tab_size: 2
