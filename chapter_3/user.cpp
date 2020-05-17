@@ -5,7 +5,7 @@
 
 double sqrt_sum(Vector &v) {
   double sum{0};
-  for (int i = 0; i != v.size(); ++i) {
+  for (std::size_t i = 0; i != v.size(); ++i) {
     sum += std::sqrt(v[i]); // sum of square
   }
   return sum;
@@ -20,8 +20,8 @@ void f(Vector &v) {
   }
 }
 
-void user(int sz) noexcept {
-  Vector v{sz};
+void user(std::size_t sz) noexcept {
+  Vector v(sz);
   // Fill v with 1, 2, 3, 4...
   // std::terminate() will be called because v[sz] will throw
   std::iota(&v[0], &v[sz], 1);
@@ -29,7 +29,7 @@ void user(int sz) noexcept {
 
 void test() {
   try {
-    Vector v{-27};
+    Vector v{10};
     std::cout << sqrt_sum(v) << '\n';
     f(v);
   } catch (std::length_error &err) {
