@@ -10,5 +10,13 @@ project(chapter_2 LANGUAGES CXX)
 
 include(../cmake/Common.cmake)
 
-add_executable(main main.cpp complex.cpp complex.hpp)
+add_executable(
+  main
+  main.cpp
+  complex.cpp
+  complex.hpp
+  vector.cpp
+  vector.hpp
+  container.cpp
+  container.hpp)
 target_link_libraries(main PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})

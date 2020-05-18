@@ -6,9 +6,9 @@ public:
   explicit complex(double r) : re{r} {}
   complex() = default;
 
-  double real() const { return re; }
+  [[nodiscard]] double real() const { return re; }
   void real(double d) { re = d; }
-  double imag() const { return im; }
+  [[nodiscard]] double imag() const { return im; }
   void imag(double d) { im = d; }
 
   complex &operator+=(complex z) {
