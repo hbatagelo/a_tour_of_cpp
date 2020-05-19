@@ -7,7 +7,7 @@ public:
   Vector(std::initializer_list<double>); // Initialize with a list of doubles
   Vector(const Vector &);
   Vector(Vector &&) noexcept;
-  ~Vector() = default;
+  ~Vector();
 
   Vector &operator=(const Vector &);
   Vector &operator=(Vector &&) noexcept;
@@ -22,3 +22,7 @@ private:
   std::unique_ptr<double[]> elem; // elem points to an array of sz doubles
   std::size_t sz;
 };
+
+class Vector_size_mismatch : std::exception {};
+
+Vector operator+(const Vector &a, const Vector &b);
