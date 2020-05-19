@@ -6,7 +6,7 @@ set(WARNINGS_TARGET warnings)
 add_library(${OPTIONS_TARGET} INTERFACE)
 add_library(${WARNINGS_TARGET} INTERFACE)
 
-project(chapter_2 LANGUAGES CXX)
+project(chapter_5 LANGUAGES CXX)
 
 include(../cmake/Common.cmake)
 
