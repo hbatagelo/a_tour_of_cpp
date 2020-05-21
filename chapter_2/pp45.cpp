@@ -24,8 +24,7 @@ int main() {
     std::cout << "Enumerators can be compared.\n";
   }
 
-  // **********
-
+  //////////////////////////////////////////////////////////////////////////////
   // The class after the enum specifies that its enumerators are scoped and
   // strongly type.
   enum class Color { red, blue, green };
@@ -39,7 +38,7 @@ int main() {
 
   std::cout << static_cast<int>(col) << static_cast<int>(c) << i << '\n';
 
-  // **********
+  //////////////////////////////////////////////////////////////////////////////
 
   // These enumerators are not scoped
   enum Color2 { red, blue, green };

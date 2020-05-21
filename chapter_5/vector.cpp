@@ -1,6 +1,5 @@
 #include "vector.hpp"
 #include <algorithm>
-#include <bits/c++config.h>
 #include <iostream>
 
 Vector::Vector(std::size_t s) {
