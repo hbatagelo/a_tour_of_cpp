@@ -1,20 +1,21 @@
-#include "vector.hpp"
 #include <cmath>
 #include <iostream>
 #include <numeric>
 
+#include "vector.hpp"
+
 double sqrt_sum(Vector &v) {
   double sum{0};
   for (std::size_t i = 0; i != v.size(); ++i) {
-    sum += std::sqrt(v[i]); // sum of square
+    sum += std::sqrt(v[i]);  // sum of square
   }
   return sum;
 }
 
 void f(Vector &v) {
-  try {              // Exceptions here are handled by the handler defined below
-    v[v.size()] = 7; // Try to access beyond the end of v
-  } catch (std::out_of_range &err) { // oops: out_of_range error
+  try {  // Exceptions here are handled by the handler defined below
+    v[v.size()] = 7;                  // Try to access beyond the end of v
+  } catch (std::out_of_range &err) {  // oops: out_of_range error
     // ... handle range error ...
     std::cerr << "  what(): " << err.what() << '\n';
   }

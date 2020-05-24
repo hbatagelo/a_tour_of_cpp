@@ -1,6 +1,7 @@
+#include <iostream>
+
 #include "complex.hpp"
 #include "container.hpp"
-#include <iostream>
 
 void f(complex z) {
   complex a{2.3};
@@ -30,7 +31,7 @@ void use(const Container &c) {
 }
 
 void g() {
-  Vector_container vc(10); //	Vector of ten elements
+  Vector_container vc(10);  //	Vector of ten elements
   // ...fill	vc..
   use(vc);
 }

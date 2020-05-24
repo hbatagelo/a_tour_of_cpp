@@ -1,4 +1,5 @@
 #include "vector.hpp"
+
 #include <algorithm>
 #include <iostream>
 
@@ -6,7 +7,7 @@ Vector::Vector(std::size_t s) {
   if (s < 0) {
     throw std::length_error{"Vector constructor: negative size"};
   }
-  elem = std::make_unique<double[]>(s); // RAII
+  elem = std::make_unique<double[]>(s);  // RAII
   sz = s;
   std::cout << "Ordinary constructor\n";
 }

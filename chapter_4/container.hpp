@@ -1,25 +1,26 @@
-#include "vector.hpp"
 #include <list>
 
+#include "vector.hpp"
+
 class Container {
-public:
+ public:
   virtual const double &operator[](std::size_t) const = 0;
   [[nodiscard]] virtual std::size_t size() const = 0;
   virtual ~Container() = default;
 
-protected:
+ protected:
   // Protected copy/move prevents polymorphic copy/move, which may lead to
   // slicing, and allows the concrete class to implicitly generate its
   // copy/move assignment operators.
   Container() = default;
-  Container(const Container &) = default;                // Copy constructor
-  Container(Container &&) noexcept = default;            // Move constructor
-  Container &operator=(const Container &) = default;     // Copy assignment
-  Container &operator=(Container &&) noexcept = default; // Move assignment
+  Container(const Container &) = default;                 // Copy constructor
+  Container(Container &&) noexcept = default;             // Move constructor
+  Container &operator=(const Container &) = default;      // Copy assignment
+  Container &operator=(Container &&) noexcept = default;  // Move assignment
 };
 
 class Vector_container : public Container {
-public:
+ public:
   explicit Vector_container(std::size_t s) : v(s) {}
   Vector_container(const Vector_container &other) = default;
   Vector_container(Vector_container &&) noexcept = default;
@@ -31,12 +32,12 @@ public:
   const double &operator[](std::size_t i) const override { return v[i]; }
   [[nodiscard]] std::size_t size() const override { return v.size(); }
 
-private:
+ private:
   Vector v;
 };
 
 class List_container : public Container {
-public:
+ public:
   List_container() = default;
   List_container(std::initializer_list<double> il) : ld{il} {};
   List_container(const List_container &) = default;
@@ -49,6 +50,6 @@ public:
   const double &operator[](std::size_t i) const override;
   [[nodiscard]] std::size_t size() const override { return ld.size(); }
 
-private:
+ private:
   std::list<double> ld;
 };

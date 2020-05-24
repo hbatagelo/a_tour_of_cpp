@@ -1,21 +1,21 @@
-#include "vector.hpp"
 #include <complex>
 #include <iostream>
 #include <list>
-#include <tuple>
+#include "vector.hpp"
 
 // A function template
 template <typename Sequence, typename Value>
-Value sum(const Sequence &s, Value v) {
-  for (auto &x : s) {
+Value sum(const Sequence& s, Value v) {
+  for (auto& x : s) {
     v += x;
   }
   return v;
 }
 
-std::tuple<int, double, double, std::complex<double>>
-user(Vector<int> &vi, std::list<double> &ld,
-     std::vector<std::complex<double>> &vc) {
+std::tuple<int, double, double, std::complex<double>> user(
+    Vector<int>& vi,
+    std::list<double>& ld,
+    std::vector<std::complex<double>>& vc) {
   // The sum of a vector of ints (add ints)
   int x = sum(vi, 0);
   // The sum of a vector of ints (add doubles)

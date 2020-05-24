@@ -7,23 +7,23 @@ struct Point {
 };
 
 class Shape {
-public:
+ public:
   [[nodiscard]] virtual Point center() const = 0;
   virtual void move(Point to) = 0;
   virtual void draw() const = 0;
   virtual void rotate(int angle) = 0;
   virtual ~Shape() = default;
 
-protected:
+ protected:
   Shape() = default;
-  Shape(const Shape &) = default;
-  Shape(Shape &&) noexcept = default;
-  Shape &operator=(const Shape &) = default;
-  Shape &operator=(Shape &&) = default;
+  Shape(const Shape&) = default;
+  Shape(Shape&&) noexcept = default;
+  Shape& operator=(const Shape&) = default;
+  Shape& operator=(Shape&&) = default;
 };
 
 class Circle : public Shape {
-public:
+ public:
   Circle(Point p, int rad) : pt{p}, r{rad} {};
   [[nodiscard]] Point center() const override { return pt; };
   void move(Point to) override { pt = to; };
@@ -31,9 +31,9 @@ public:
   void rotate([[maybe_unused]] int angle) override{};
   [[nodiscard]] int radius() const { return r; }
 
-private:
+ private:
   Point pt{};
   int r{};
 };
 
-std::unique_ptr<Shape> read_shape(std::istream &is);
+std::unique_ptr<Shape> read_shape(std::istream& is);

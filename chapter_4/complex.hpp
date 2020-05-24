@@ -1,7 +1,7 @@
 class complex {
   double re{}, im{};
 
-public:
+ public:
   complex(double r, double i) : re{r}, im{i} {}
   explicit complex(double r) : re{r} {}
   complex() = default;

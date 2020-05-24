@@ -10,13 +10,13 @@ project(chapter_6 LANGUAGES CXX)
 
 include(../cmake/Common.cmake)
 
-add_executable(main main.cpp vector.cpp vector.hpp)
+add_executable(main main.cpp vector.hpp)
 target_link_libraries(main PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})
 
-add_executable(pp116 pp116.cpp vector.cpp vector.hpp)
+add_executable(pp116 pp116.cpp vector.hpp)
 target_link_libraries(pp116 PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})
 
-add_executable(pp117 pp117.cpp vector.cpp vector.hpp)
+add_executable(pp117 pp117.cpp vector.hpp)
 target_link_libraries(pp117 PRIVATE ${OPTIONS_TARGET} ${WARNINGS_TARGET})
 
 add_executable(pp119 pp119.cpp shape.cpp shape.hpp)

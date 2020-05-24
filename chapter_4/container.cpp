@@ -1,4 +1,5 @@
 #include "container.hpp"
+
 #include <stdexcept>
 
 const double &List_container::operator[](std::size_t i) const {
