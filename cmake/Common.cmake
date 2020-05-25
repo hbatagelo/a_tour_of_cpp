@@ -47,6 +47,7 @@ set(CONAN_EXTRA_REQUIRES "")
 set(CONAN_EXTRA_OPTIONS "")
 
 set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} ms-gsl/[>=3.0.1])
+set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} cppitertools/[>=2.0])
 
 include(${CMAKE_CURRENT_LIST_DIR}/Conan.cmake)
 run_conan()
@@ -62,9 +63,11 @@ enable_sanitizers(${OPTIONS_TARGET})
 # Static analysis
 include(${CMAKE_CURRENT_LIST_DIR}/StaticAnalyzers.cmake)
 
-# MS-GSL
-target_include_directories(${OPTIONS_TARGET}
-                           INTERFACE ${CONAN_MS-GSL_ROOT}/include)
+# Conan aggregated header's folders
+target_include_directories(${OPTIONS_TARGET} INTERFACE ${CONAN_INCLUDE_DIRS})
+
+# Conan aggregated library names to link
+target_link_libraries(${OPTIONS_TARGET} INTERFACE ${CONAN_LIBS})
 
 # C++20
 target_compile_features(${OPTIONS_TARGET} INTERFACE cxx_std_20)

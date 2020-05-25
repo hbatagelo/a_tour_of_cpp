@@ -13,6 +13,11 @@ macro(run_conan)
   endif()
   include(${CMAKE_BINARY_DIR}/conan.cmake)
 
+  # Add ayeganov remote repository
+  conan_check()
+  conan_add_remote(NAME ayeganov URL
+                   https://api.bintray.com/conan/ayeganov/cppitertools)
+
   # Launch conan install
   conan_cmake_run(
     REQUIRES
