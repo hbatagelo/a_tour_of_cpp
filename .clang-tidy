@@ -9,5 +9,5 @@ HeaderFilterRegex: '.*'
 
 AnalyzeTemporaryDtors: false
 
-FormatStyle: llvm
+FormatStyle: google
 ...
