@@ -7,7 +7,7 @@ struct Record {
   int product_code;
 };
 
-bool operator==(const Record& a, const Record& b) { return &a == &b; };
+bool operator==(const Record& lhs, const Record& rhs) { return &lhs == &rhs; };
 
 // A hash function for Record
 struct RHash {
