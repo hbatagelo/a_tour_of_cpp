@@ -5,7 +5,7 @@
 
 struct Record {
   std::string name;
-  int product_code;
+  int product_code{};
   auto operator<=>(const Record&) const = default;  // NOLINT
 };
 /*
@@ -33,13 +33,13 @@ struct hash<Record> {
 };
 }  // namespace std
 
-// Set of Records using RecordHash for lookup
-std::unordered_set<Record, RHash> my_set;
-// std::unordered_set<Record> my_set;
-
 ////////////////////////////////////////////////////////////////////////////////
 
 int main() {
+  // Set of Records using RecordHash for lookup
+  std::unordered_set<Record, RHash> my_set;
+  // std::unordered_set<Record> my_set;
+
   my_set.insert({"David Hume", 123456});
   my_set.insert({"Karl Popper", 234567});
   my_set.insert({"Bertrand Arthur William Russell", 345678});
