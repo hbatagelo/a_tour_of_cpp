@@ -6,20 +6,21 @@
 #include <vector>
 
 struct Entry {
-  std::string name;
-  int number;
+  std::string name{};
+  int number{};
 
-  auto operator<=>(const Entry&) const noexcept = default;
+  // auto operator<=>(const Entry&) const noexcept = default;
 };
-/*
+
 bool operator<(const Entry& lhs, const Entry& rhs) {
-  return lhs.name == rhs.name ? lhs.number < rhs.number : lhs.name < rhs.name;
+  return (lhs.name == rhs.name) ? (lhs.number < rhs.number)
+                                : (lhs.name < rhs.name);
 }
 
 bool operator==(const Entry& lhs, const Entry& rhs) {
   return lhs.name == rhs.name && lhs.number == rhs.number;
 }
-*/
+
 std::ostream& operator<<(std::ostream& os, const Entry& e) {
   return os << "{\"" << e.name << "\", " << e.number << "}";
 }

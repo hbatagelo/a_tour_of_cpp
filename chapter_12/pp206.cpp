@@ -4,8 +4,8 @@
 #include <string>
 #include <utility>
 
-struct Greater_than {
-  explicit Greater_than(int v) : val{v} {}
+struct GreaterThan {
+  explicit GreaterThan(int v) : val{v} {}
   bool operator()(const std::pair<std::string, int>& r) const {
     return r.second > val;
   }
