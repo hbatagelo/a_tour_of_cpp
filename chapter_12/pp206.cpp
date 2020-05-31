@@ -31,6 +31,8 @@ void f(std::map<std::string, int>& m) {
 int main() {
   using namespace std::string_literals;
 
-  std::map<std::string, int> p{{"abc"s, 12}, {"def"s, 43}};
+  std::map<std::string, int> p;  //{{"abc"s, 12}, {"def"s, 43}};
+  p.emplace("abc"s, 12);
+  p.emplace("def"s, 43);
   f(p);
 }

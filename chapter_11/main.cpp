@@ -6,13 +6,13 @@
 struct Record {
   std::string name;
   int product_code{};
-  auto operator<=>(const Record&) const = default;  // NOLINT
+  // auto operator<=>(const Record&) const = default;
 };
-/*
+
 bool operator==(const Record& lhs, const Record& rhs) noexcept {
   return lhs.name == rhs.name && lhs.product_code == rhs.product_code;
 };
-*/
+
 // A hash function for Record
 struct RHash {
   std::size_t operator()(const Record& r) const {

@@ -6,8 +6,7 @@
 
 void use1() {
   std::filesystem::path f{"dir/hypothetical.cpp"};  // Naming a file
-  // NOLINTNEXTLINE(cppcoreguidelines-pro-bounds-array-to-pointer-decay)
-  assert(std::filesystem::exists(f));  // f must exit
+  assert(std::filesystem::exists(f));               // f must exit
 
   if (std::filesystem::is_regular_file(f)) {  // Is f an ordinary file?
     std::cout << f << " is a file; its size is "

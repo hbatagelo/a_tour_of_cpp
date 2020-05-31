@@ -24,16 +24,14 @@ int main() {
   v.reserve(vector_size);
 
   using namespace std::chrono;
-  steady_clock::time_point start{};
-  steady_clock::time_point end{};
 
   // Sequential (same as the default)
   v.clear();
   std::cout << "seq: " << std::flush;
   std::copy(original_v.begin(), original_v.end(), std::back_inserter(v));
-  start = steady_clock::now();
+  auto start = steady_clock::now();
   std::sort(std::execution::seq, v.begin(), v.end());
-  end = steady_clock::now();
+  auto end = steady_clock::now();
   std::cout << duration_cast<milliseconds>(end - start).count() << " ms\n";
 
   // May be parallelized
@@ -54,14 +52,14 @@ int main() {
   end = steady_clock::now();
   std::cout << duration_cast<milliseconds>(end - start).count() << " ms\n";
 
-  // May be vectorized
-  std::cout << "unseq: " << std::flush;
-  v.clear();
-  std::copy(original_v.begin(), original_v.end(), std::back_inserter(v));
-  start = steady_clock::now();
-  std::sort(std::execution::unseq, v.begin(), v.end());
-  end = steady_clock::now();
-  std::cout << duration_cast<milliseconds>(end - start).count() << " ms\n";
+  // May be vectorized (does not work in MSVC)
+  // std::cout << "unseq: " << std::flush;
+  // v.clear();
+  // std::copy(original_v.begin(), original_v.end(), std::back_inserter(v));
+  // start = steady_clock::now();
+  // std::sort(std::execution::unseq, v.begin(), v.end());
+  // end = steady_clock::now();
+  // std::cout << duration_cast<milliseconds>(end - start).count() << " ms\n";
 
   // std::cout << "\n";
   // for (const auto& x : v) {

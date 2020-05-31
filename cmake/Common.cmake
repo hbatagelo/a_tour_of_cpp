@@ -71,3 +71,9 @@ target_link_libraries(${OPTIONS_TARGET} INTERFACE ${CONAN_LIBS})
 
 # C++20
 target_compile_features(${OPTIONS_TARGET} INTERFACE cxx_std_20)
+
+# Copy compile_commands.json to source directory
+add_custom_target(
+  copy-compile-commands ALL
+  ${CMAKE_COMMAND} -E copy_if_different
+  ${CMAKE_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR})

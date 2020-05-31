@@ -6,9 +6,8 @@
 #include <vector>
 
 struct Entry {
-  std::string name{};
+  std::string name;
   int number{};
-
   // auto operator<=>(const Entry&) const noexcept = default;
 };
 
