@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+
 #include "vector.hpp"
 
 using namespace std::string_literals;
@@ -14,8 +15,8 @@ class Less_than {
   // See
   // https://stackoverflow.com/questions/51705967/advantages-of-pass-by-value-and-stdmove-over-pass-by-reference
   explicit Less_than(T v) : val{std::move(v)} {}
-  // explicit Less_than(const T &v) : val{v} {}
-  // explicit Less_than(T &&v) : val{std::move(v)} {}
+  // explicit Less_than(const T& v) : val{v} {}
+  // explicit Less_than(T&& v) : val{std::move(v)} {}
   bool operator()(const T& x) const { return x < val; }  // Call operator
 };
 
@@ -48,9 +49,7 @@ int count(const C& c, P pred) {
   return cnt;
 }
 
-void f(const Vector<int>& vec,
-       const std::list<std::string>& lst,
-       int x,
+void f(const Vector<int>& vec, const std::list<std::string>& lst, int x,
        const std::string& s) {
   std::cout << "\nUsing Less_than:\n";
   std::cout << "Number of values less than " << x << ": "
